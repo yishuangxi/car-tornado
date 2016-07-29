@@ -3,11 +3,11 @@ from page import index
 from page import user
 
 router = [
-    (r'/', index.IndexPage),
+    (r'/', index.PageIndex),
 
     #user
-    (r'/login', user.LoginPage),
-    (r'/register', user.RegisterPage),
-    (r'/user/(\d+)', user.DetailPage),
-    (r'/user/edit', user.EditPage)
+    (r'/login', user.PageLogin),
+    (r'/register', user.PageRegister),
+    (r'/user/(\d+)', user.PageDetail),
+    (r'/user/edit', user.PageEdit)
 ]

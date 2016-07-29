@@ -1,20 +1,23 @@
-#coding=utf8
+# coding=utf8
 
-from base import BasePage
+from base import PageBase
 
-class LoginPage(BasePage):
+
+class PageLogin(PageBase):
     def get(self, *args, **kwargs):
         self.render('web/user/login.html')
 
-class RegisterPage(BasePage):
+
+class PageRegister(PageBase):
     def get(self, *args, **kwargs):
         self.render('web/user/register.html')
 
-class EditPage(BasePage):
-    def get(self):
+
+class PageEdit(PageBase):
+    def get(self, *args, **kwargs):
         self.render('web/user/edit.html')
 
-class DetailPage(BasePage):
+
+class PageDetail(PageBase):
     def get(self, user_id):
         self.render('web/user/detail.html')
-

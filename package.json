@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/yishuangxi/car-tornado/issues"
   },
-  "homepage": "https://github.com/yishuangxi/car-tornado#readme"
+  "homepage": "https://github.com/yishuangxi/car-tornado#readme",
+  "dependencies": {
+    "purecss": "^0.6.0",
+    "react": "^15.2.1",
+    "react-dom": "^15.2.1"
+  }
 }

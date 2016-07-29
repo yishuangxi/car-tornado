@@ -8,4 +8,5 @@ from router.all import router
 if __name__ == '__main__':
     app = Application(router, **config_site)
     app.listen(8888)
+    print 'serving on http://localhost:8888'
     IOLoop.instance().start()

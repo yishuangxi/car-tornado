@@ -3,8 +3,8 @@ import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
 
-from base import BasePage
+from base import PageBase
 
-class IndexPage(BasePage):
+class PageIndex(PageBase):
     def get(self):
         self.render('web/index/index.html')
