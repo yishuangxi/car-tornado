@@ -3,21 +3,21 @@
 from base import PageBase
 
 
-class PageLogin(PageBase):
+class PageUserLogin(PageBase):
     def get(self, *args, **kwargs):
-        self.render('web/user/login.html')
+        self.render('web/user/user_login.html')
 
 
-class PageRegister(PageBase):
+class PageUserRegister(PageBase):
     def get(self, *args, **kwargs):
-        self.render('web/user/register.html')
+        self.render('web/user/user_register.html')
 
 
-class PageEdit(PageBase):
+class PageUserEdit(PageBase):
     def get(self, *args, **kwargs):
-        self.render('web/user/edit.html')
+        self.render('web/user/user_edit.html')
 
 
-class PageDetail(PageBase):
+class PageUserDetail(PageBase):
     def get(self, user_id):
-        self.render('web/user/detail.html')
+        self.render('web/user/user_detail.html')

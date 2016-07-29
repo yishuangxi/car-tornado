@@ -6,8 +6,8 @@ router = [
     (r'/', index.PageIndex),
 
     #user
-    (r'/login', user.PageLogin),
-    (r'/register', user.PageRegister),
-    (r'/user/(\d+)', user.PageDetail),
-    (r'/user/edit', user.PageEdit)
+    (r'/login', user.PageUserLogin),
+    (r'/register', user.PageUserRegister),
+    (r'/user/(\d+)', user.PageUserDetail),
+    (r'/user/edit', user.PageUserEdit)
 ]
