@@ -38,9 +38,13 @@ class ApiUserRegister(ApiUserBase):
         phone = self.get_argument('phone')
         sex = self.get_argument('sex')
 
-        user_id = yield self.srv_user.create(username, password, phone, sex)
+        valid, msg = yield self.srv_user.check_register(username, password, phone, sex)
 
-        self.json_success(data=user_id)
+        if not valid:
+            self.json_error(msg=msg)
+        else:
+            user_id = yield self.srv_user.create(username, password, phone, sex)
+            self.json_success(data=user_id)
 
 
 

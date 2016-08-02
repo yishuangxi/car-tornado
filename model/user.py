@@ -9,25 +9,25 @@ class ModelUserBase(ModelBase):
 class ModelUser(ModelUserBase):
     @coroutine
     def find_one_by_username_password(self, username, password):
-        sql = 'select * from user where username=%s, password=%s'
+        sql = 'select * from user where username=%s, password=%s limit 1'
         res = yield self.get(sql, username, password)
         raise Return(res)
 
     @coroutine
     def find_one_by_id(self, user_id):
-        sql = 'select * from user where id=%s'
+        sql = 'select * from user where id=%s limit 1'
         res = yield self.get(sql, user_id)
         raise Return(res)
 
     @coroutine
     def find_one_by_username(self, username):
-        sql = 'select * from user where username=%s'
+        sql = 'select * from user where username=%s limit 1'
         res = yield self.get(sql, username)
         raise Return(res)
 
     @coroutine
     def find_one_by_phone(self, phone):
-        sql = 'select * from user where phone=%s'
+        sql = 'select * from user where phone=%s limit 1'
         res = yield self.get(sql, phone)
         raise Return(res)
 
