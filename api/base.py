@@ -17,6 +17,12 @@ class ApiBase(RequestHandler):
                 'data': self.__json(data)
             })
         else:
+            self.set_header('content-type', 'text/javascript')
+            data = {
+                'code': 1,
+                'msg': msg,
+                'data': self.__json(data)
+            }
             self.write("""
 
             try{

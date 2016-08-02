@@ -14,4 +14,4 @@ class ServiceBase(object):
         return True
 
     def check_digital(self, value):
-        pass
+        return True
