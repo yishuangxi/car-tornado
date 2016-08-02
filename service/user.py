@@ -17,3 +17,8 @@ class ServiceUser(ServiceBase):
     def find_one_by_id(self, user_id):
         res = yield self.model_user.find_one_by_id(user_id=user_id)
         raise Return(res)
+
+    @coroutine
+    def create(self, username, password, phone, sex):
+        res = yield self.model_user.create(username, password, phone, sex)
+        raise Return(res)

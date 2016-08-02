@@ -22,7 +22,7 @@ class ModelBase(object):
             res = yield method(sql, *args, **kwargs)
             raise Return(res)
 
-    # 装饰器，装饰asynctorndb各方法：query, execute, insert,
+    # 装饰器，装饰asynctorndb各方法：iter, query, get, update, delete, execute, insert,
     def __do_sql_operation(method):
         def _(func):
             @wraps(func)

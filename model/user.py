@@ -30,3 +30,12 @@ class ModelUser(ModelUserBase):
         sql = 'select * from user where phone=%s'
         res = yield self.get(sql, phone)
         raise Return(res)
+
+    @coroutine
+    def create(self, username, password, phone, sex):
+        sql = '''insert into user (id, username, password, phone, sex, status, created_at, updated_at)
+                                     values(null, %s, %s, %s, %s, %s, %s, %s)'''
+        status, now = 'disabled', self.now()
+        res = yield self.insert(sql, username, password, phone, sex, status, now, now)
+
+        raise Return(res)
